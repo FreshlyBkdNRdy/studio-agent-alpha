@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: studio-agent-alpha
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: MONEY_GATE_ENABLED
+        value: "true"
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: SETUP_TOKEN
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
